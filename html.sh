@@ -11,11 +11,9 @@ echo '<meta http-equiv="Content-type"
 content="text/html;charset=UTF-8">'
 echo '<meta name="ROBOTS" content="noindex">'
 echo "</head><body><pre>"
-ssh -p 20000 pi@localhost '~/snap/take_picture.sh'
-scp -P 20000 pi@localhost:~/pic* /home/product/raspberry-snap/
-cat /home/product/raspberry-snap/picdate.txt
+/home/product/raspberry-snap/remote.sh
 echo "\n"
 echo '<img src="pic.jpg" alt="Smiley face" " height="600">'
 echo "\ncpuinfo"
-ssh -p 20000 pi@localhost 'cat /proc/cpuinfo'
+#ssh -p 20000 pi@localhost 'cat /proc/cpuinfo'
 echo "</pre></body></html>"

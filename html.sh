@@ -10,9 +10,11 @@ echo '<meta http-equiv="Content-type"
 content="text/html;charset=UTF-8">'
 echo '<meta name="ROBOTS" content="noindex">'
 echo "</head><body><pre>"
-date
-echo "\nuname -a"
-uname -a
+ssh -p 20000 pi@localhost '~/snap/take_picture.sh'
+scp -p 20000 pi@localhost:~/snap/pic* .
+cat /home/product/raspberry-snap/picdate.txt
+echo "\n"
+
 echo "\ncpuinfo"
 cat /proc/cpuinfo
 echo "</pre></body></html>"

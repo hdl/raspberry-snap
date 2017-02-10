@@ -1,6 +1,6 @@
 #!/bin/sh
 # -*- coding: utf-8 -*-
-NAME=`"cpuinfo"`
+NAME="cpuinfo"
 echo "Content-type:text/html\r\n"
 echo "<html><head>"
 echo "<title>$NAME</title>"
@@ -18,6 +18,4 @@ echo $HOME
 /home/product/raspberry-snap/remote.sh
 echo "\n"
 echo '<img src="pic.jpg" alt="Smiley face" " height="600">'
-echo "\ncpuinfo"
-#ssh -p 20000 pi@localhost 'cat /proc/cpuinfo'
 echo "</pre></body></html>"

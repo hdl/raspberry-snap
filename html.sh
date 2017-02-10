@@ -11,6 +11,10 @@ echo '<meta http-equiv="Content-type"
 content="text/html;charset=UTF-8">'
 echo '<meta name="ROBOTS" content="noindex">'
 echo "</head><body><pre>"
+pwd
+cd ~
+pwd
+echo $HOME
 /home/product/raspberry-snap/remote.sh
 echo "\n"
 echo '<img src="pic.jpg" alt="Smiley face" " height="600">'

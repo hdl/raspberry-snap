@@ -11,11 +11,7 @@ echo '<meta http-equiv="Content-type"
 content="text/html;charset=UTF-8">'
 echo '<meta name="ROBOTS" content="noindex">'
 echo "</head><body><pre>"
-pwd
-cd ~
-pwd
-echo $HOME
-/home/product/raspberry-snap/remote.sh
+sshpass -p 'raspberry' ssh -p 20000 pi@localhost 'raspistill -q 5 -o ~/pic.jpg --nopreview --exposure sports --timeout 1; TZ='America/Los_Angeles'; export TZ; date; scp ~/pic.jpg product@47.88.195.56:~/raspberry-snap/; cat /proc/cpuinfo'
 echo "\n"
 echo '<img src="pic.jpg" alt="Smiley face" " height="600">'
 echo "</pre></body></html>"

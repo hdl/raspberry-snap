@@ -11,7 +11,9 @@ echo '<meta http-equiv="Content-type"
 content="text/html;charset=UTF-8">'
 echo '<meta name="ROBOTS" content="noindex">'
 echo "</head><body><pre>"
-sshpass -p 'raspberry' ssh -p 20000 pi@localhost 'raspistill -q 5 -o ~/pic.jpg --nopreview --exposure sports --timeout 1; TZ='America/Los_Angeles'; export TZ; date; scp ~/pic.jpg product@47.88.195.56:~/raspberry-snap/; cat /proc/cpuinfo'
-echo "\n"
+sshpass -p 'raspberry' ssh -p 20000 pi@localhost 'raspistill -q 5 -o ~/pic.jpg --nopreview --exposure sports --timeout 1 2>&1; echo "Take picture: $?"; TZ='America/Los_Angeles'; export TZ; date; scp ~/pic.jpg product@47.88.195.56:~/raspberry-snap/; echo "scp: $?";'
+TZ='America/Los_Angeles'; export TZ;
+echo "Serve photo modify time:"
+ls -all | grep pic.jpg | awk '{print $8}'
 echo '<img src="pic.jpg" alt="Smiley face" " height="600">'
 echo "</pre></body></html>"
